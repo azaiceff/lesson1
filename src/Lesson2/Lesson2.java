@@ -94,9 +94,8 @@ public class Lesson2 {
 
                             switch (choice) {
                                 case '1':
-                                    Scanner console = new Scanner(System.in);
                                     System.out.println("Введите год");
-                                    System.out.println(year(console.nextInt()));
+                                    System.out.println(year(sc.nextInt()));
                                     break;
                                 case '2':
                                     if (random.nextBoolean()) {
