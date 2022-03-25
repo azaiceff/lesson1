@@ -1,12 +1,11 @@
 package Lesson2;
 
-import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Lesson2 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         /*Словарь украинских слов для задания 4*/
         String[] task4 = {"Зонтик - парасолька", "Бабочка - метелик", "Лифт - ліфт",
                 "Кощей бессмертный - кощій безсмертний", "Телевизор - телевізор",
@@ -26,6 +25,7 @@ public class Lesson2 {
         Random random = new Random();
         // Здесь формирую меню выбора задания
         for (;;) {
+            Scanner sc = new Scanner(System.in);
             menuAll: {
                 char choice;
                 do {//это текст меню
@@ -51,11 +51,8 @@ public class Lesson2 {
                     "6: Рисование *\n" +
                     "q: Завершить программу");
 
-                    choice = (char) System.in.read();
-                    char ignore;
-                    do {
-                        ignore = (char) System.in.read();
-                    } while (ignore != '\n');
+                    choice = sc.next().charAt(0);
+
                 } while (choice < '1' | choice > '6' & choice != 'q');
 
                 if (choice == 'q') break;
@@ -90,11 +87,7 @@ public class Lesson2 {
                                         "1. Ввести год с клавиатуры\n" +
                                         "2. Сгенерировать случайный год\n" +
                                         "q. Выход в предыдущее меню");
-                                choice = (char) System.in.read();
-                                char ignore;
-                                do {
-                                    ignore = (char) System.in.read();
-                                } while (ignore != '\n');
+                                choice = sc.next().charAt(0);
                             } while (choice < '1' | choice > '2' & choice != 'q');
 
                             if (choice == 'q') break menuAll;
@@ -164,9 +157,7 @@ public class Lesson2 {
 100-го, при этом каждый 400-й – високосный.*/
     private static boolean year(int year){
         System.out.println(year + "г.");
-        if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0) {
-            return true;
-        }else return year % 4 == 0 && year % 100 != 0;
+        return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
     }
     /* Рисование. Бонусное задание из методички - не для ДЗ */
     private static void painting() {
