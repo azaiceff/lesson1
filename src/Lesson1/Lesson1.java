@@ -1,6 +1,6 @@
 package Lesson1;
 
-public class Main {
+public class Lesson1 {
 
     public static void main(String[] args) {
         printThreeWords();
@@ -10,7 +10,7 @@ public class Main {
 
     }
 
-    public static  void printThreeWords() {
+    private static  void printThreeWords() {
         /*2. Создайте метод printThreeWords(),
         который при вызове должен отпечатать в столбец
         три слова: Orange, Banana, Apple.
@@ -26,11 +26,11 @@ public class Main {
     // и затем определять диапазон
     // в который попадет случайное число в соот. методе,
     // но и так подходит ко всем заданиям)
-    public static int random(){
+    private static int random(){
         return (int) (Math.random() * 250) - 100;
     }
 
-    public static  void checkSumSign() {
+    private static  void checkSumSign() {
       /*3. Создайте метод checkSumSign(), в теле которого объявите две int переменные a и b,
         и инициализируйте их любыми значениями, которыми захотите.
         Далее метод должен просуммировать эти переменные,
@@ -50,7 +50,7 @@ public class Main {
         System.out.println();
     }
 
-    public static void printColor() {
+    private static void printColor() {
         /*4. Создайте метод printColor() в теле которого задайте int переменную value
         и инициализируйте ее любым значением. Если value меньше 0 (0 включительно),
         то в консоль метод должен вывести сообщение “Красный”,
@@ -69,7 +69,7 @@ public class Main {
         System.out.println();
     }
 
-    public static void compareNumbers() {
+    private static void compareNumbers() {
         /*5. Создайте метод compareNumbers(),
         в теле которого объявите две int переменные a и b,
         и инициализируйте их любыми значениями, которыми захотите.
