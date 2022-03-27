@@ -8,12 +8,18 @@ public class Lesson3 {
     mass01();
     mass100();
     massX2();
+    massXXX();
+    printMasslen();
+    massMinMax();
+
+
     }
     static Random random = new Random();
     /*1. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1,
 0, 0 ]. С помощью цикла и условия заменить 0 на 1, 1 на 0*/
     private static void mass01() {
-        /*генерируем двухмерный массив и выводим его на печать*/
+        /*с одномерным массивом все ясно, буду пробовать двухмерный.
+        Сгенерирую двухмерный массив и выводим его в консоль*/
         System.out.println("Задание 1.\nГенерируем массив");
         int leng1 = random.nextInt(6) + 1;
         int leng2 = random.nextInt(21) + 1;
@@ -25,16 +31,15 @@ public class Lesson3 {
             }
             System.out.println();
         }
-        System.out.println("Меняем в массиве 0 на 1 и 1 на 0");// и выводим его на печать
+        System.out.println("Меняем в массиве 0 на 1 и 1 на 0");// и выводим его в консоль
         for(int i = 0; i < leng1; i++) {
             for (int j = 0; j < leng2; j++){
                 if(mass01[i][j] == 0){
                     mass01[i][j] = 1;
-                    System.out.print(mass01[i][j]);
                 }else {
                     mass01[i][j] = 0;
-                    System.out.print(mass01[i][j]);
                 }
+                System.out.print(mass01[i][j]);
             }
             System.out.println();
         }
@@ -62,8 +67,9 @@ public class Lesson3 {
 умножить на 2*/
     private static void massX2() {
         System.out.println("Задание 3.");
-        /*генерируем трехмерный массив, делаем подмену и выводим его на печать
-        (подмену уже делал в первом задании, здесь решил пойти немного по другому)*/
+        /*Немного усложню, генерируем трехмерный массив, делаем подмену и выводим его в консоль
+        (подмену уже делал в первом задании, здесь решил пойти немного по другому - загоняю и тут-же
+        делаю подмену)*/
         int leng = random.nextInt(6) + 4;
         int [][][] massX2 = new int[Math.abs(leng - 6) + 1][leng - 1][leng];
         //[Math.abs(leng - 6) + 1] здесь я мог получить отрицательное число, поэтому модуль.
@@ -89,5 +95,112 @@ public class Lesson3 {
         }
         System.out.println();
     }
+/*4. Создать квадратный двумерный целочисленный массив (количество строк и столбцов
+одинаковое), и с помощью цикла(-ов) заполнить его диагональные элементы единицами
+(можно только одну из диагоналей, если обе сложно). Определить элементы одной из
+диагоналей можно по следующему принципу: индексы таких элементов равны, то есть [0][0],
+[1][1], [2][2], …, [n][n]*/
+    private static void massXXX() {
+        // трехмерный массив вроде тоже не сложно, попробую выполнить эту задачу в четырехмерном массиве
+        System.out.println("Задание 4.");
+        int leng = random.nextInt(4) + 10;
+        int[][][][] massXXX = new int[random.nextInt(2) + 2][random.nextInt(3) + 2][leng][leng];
+        System.out.println("\nЭТО ВСЕ ЧЕТЫРЕХМЕРНЫЙ МАССИВ!\n");
+        for(int i = 0; i < massXXX.length; i++) {
+            System.out.println((i + 1) + ". Трехмерный массив\n" );
+            for (int j = 0; j < massXXX[i].length; j++) {
+                System.out.println((j + 1) + ". Двухмерный массив в " + (i + 1) + " трехмерном массиве");
+                for (int k = 0; k < massXXX[i][j].length; k++) {
+                    for (int l = 0; l < massXXX[i][j][k].length; l++){
+                        //Здесь уже спустились в одномерный массив, пора формировать крестик
+                        if (k == l || l == massXXX[i][j][k].length - 1 - k){
+                            massXXX[i][j][k][l] = 1;
+                            // Единички не оч. смотрятся, заменю их смайликами
+                            System.out.print("\uD83D\uDE00 ");
+                        }else {
+                            massXXX[i][j][k][l] = random.nextInt(90) + 10;
+                            // что бы квадратики в консоли были ровными, сгенерировал только двузначные числа
+                            System.out.print(massXXX[i][j][k][l] + " ");
+                        }
+                    }
+                    System.out.println();
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
+        //Сделаем выводы. Четырехмерный массив уже интереснее, но пяти мерный делать уже не хочется
+        // (можно конечно попробовать, но ...)
+        System.out.println("Мы получили четырехмерный массив!\n" + "В котором " + massXXX.length
+        + " трехмерных массива,\nв каждом из которых по " + massXXX[massXXX.length - 1].length
+        + " двухмерных массива.\n" + "Всего двухмерных массивов: "
+        + massXXX.length * massXXX[massXXX.length - 1].length + "шт.\n"
+        + "В каждом двухмерном по "
+        + massXXX[massXXX.length - 1][massXXX[massXXX.length - 1].length - 1].length + " одномерных.\n"
+        + "Давайте не будем считать сколько одномерных))\nЛадно их всего - "
+        + massXXX.length
+        * massXXX[massXXX.length - 1].length
+        * massXXX[massXXX.length - 1][massXXX[massXXX.length - 1].length - 1].length + "шт.))\n");
+    }
+/*5. Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий
+одномерный массив типа int длиной len, каждая ячейка которого равна initialValue*/
+        //сделаю все же двумерный массив
+    private static int[][] massLen(int len, int initialValue) {
+        int[][] massLen = new int[len][len * 5];
+        for(int i = 0; i < len; i++){
+            for (int j = 0; j < len * 5; j++){
+                massLen[i][j] = initialValue;
+            }
+        }return massLen;
+    }
+// Отдельный метод для задания 5. Он генерирует и выводит в консоль полученный массив
+    private static void printMasslen() {
+        System.out.println("Задание 5.");
+        int[][] printMasslen = massLen(random.nextInt(5) + 3, random.nextInt(100));
+        for (int[] ints : printMasslen) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+    }
+/*6. * Задать одномерный массив и найти в нем минимальный и максимальный элементы*/
+    // пусть будет трехмерный массив
+    private static void massMinMax() {
+        System.out.println("Задание 6");
+        int min = 10000000;
+        int max = 0;
+        int leng = random.nextInt(6) + 5;
+        int [][][] massMinMax = new int[leng][leng][leng];
+        for(int i = 0; i < massMinMax.length; i++){
+            for(int j = 0; j < massMinMax[i].length; j++){
+                for(int k = 0; k < massMinMax[i][j].length; k++){
+                    massMinMax[i][j][k] = random.nextInt(10000) + 10;
+                    System.out.print(massMinMax[i][j][k] + " ");
+                    if (massMinMax[i][j][k] > max){
+                        max = massMinMax[i][j][k];
+                    }else if (massMinMax[i][j][k] < min){
+                        min = massMinMax[i][j][k];
+                    }
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
+        System.out.println("Max = " + max + "\nMin = " + min);
+    }
+/*7. ** Написать метод, в который передается не пустой одномерный целочисленный массив,
+метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой части
+массива равны.*/
+/* *** Написать метод, которому на вход подается одномерный массив и число n (может быть
+ положительным, или отрицательным), при этом метод должен сместить все элементы массива
+ на n позиций. Элементы смещаются циклично. Для усложнения задачи нельзя пользоваться
+ вспомогательными массивами. Примеры: [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ]; [ 3, 5,
+ 6, 1] при n = -2 (на два влево) -> [ 6, 1, 3, 5 ]. При каком n в какую сторону сдвиг можете
+ выбирать сами.*/
+
+
 
 }
