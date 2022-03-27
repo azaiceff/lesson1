@@ -1,6 +1,5 @@
 package Lesson3;
 
-//import java.util.Arrays;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -228,6 +227,9 @@ public class Lesson3 {
         }
         //Сделаем выводы. Четырехмерный массив уже интереснее, но пяти мерный делать уже не хочется
         // (можно конечно попробовать, но ...)
+        //Сейчас на практике мне стало очевидно, что каким бы мерным не был массив, он все равно сводится к
+        //одномерному и далее к конкретному элементу. Это просто "матрешка". На любом уровне массива мы можем работать
+        //как с одномерным массивом.
         System.out.println("Мы получили четырехмерный массив!\n" + "В котором " + massXXX.length
         + " трехмерных массива,\nв каждом из которых по " + massXXX[massXXX.length - 1].length
         + " двухмерных массива.\n" + "Всего двухмерных массивов: "
@@ -254,8 +256,8 @@ public class Lesson3 {
     private static void printMasslen() {
         System.out.println("Задание 5.");
         int[][] printMasslen = massLen(random.nextInt(5) + 3, random.nextInt(100));
-        for (int[] ints : printMasslen) {
-            for (int anInt : ints) {
+        for (int[] ints : printMasslen) { //мне такой вид цикла еще не знаком. intelliJ мне сама его пихает всегда,
+            for (int anInt : ints) {      // а он мне не понятен еще, только путает
                 System.out.print(anInt + " ");
             }
             System.out.println();
@@ -305,7 +307,7 @@ public class Lesson3 {
                 b += mass[k];
             }
             if (a - b == 0  ) {
-                System.out.println("\nСумма равна " + a +"\nГраница " + (j + 1));
+                System.out.println("\nСумма равна " + a +"\nГраница - " + (j + 1) + "-й элемент");
                 c = true;
                 System.out.println(Arrays.toString(mass));
             }
@@ -347,6 +349,9 @@ public class Lesson3 {
             for(int i = 0; i < n; i++){
                 int k = mass[mass.length - 1];
                 System.arraycopy(mass, 0, mass, 1, mass.length - 1);
+                //К сожалению подобные фишки типа System.arraycopy мне тоже еще не знакомы.
+                // Я что-то напишу, а интеледжи мне предлагает заменить код на другой,
+                // в итоге не понимаю, что это (только догадываюсь). Но самое интересное, что все работает)
                 mass[0] = k;
             }
         }else {
@@ -371,7 +376,7 @@ public class Lesson3 {
             }
             System.out.println();
         }
-        int n = random.nextInt(5) -2;
+        int n = random.nextInt(5) - 2;
         if (n == 0) {// что бы ноль не генерировался
             n = 1;
         }
@@ -390,6 +395,5 @@ public class Lesson3 {
             }while(choice != 'q'); //как здесь выбрать не q, а любая клавиша?
             break;
         }
-
     }
 }
