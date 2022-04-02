@@ -81,7 +81,7 @@ public class Lesson3 {
                     stop();
                     break;
                 case '5':
-                    printarraylen();
+                    printArraylen();
                     System.out.println("Написать метод, принимающий на вход два аргумента: " +
                             "len и initialValue, и возвращающий\nодномерный массив типа int длиной len, " +
                             "каждая ячейка которого равна initialValue\n\n");
@@ -249,7 +249,7 @@ public class Lesson3 {
         }return arrayLen;
     }
 // Отдельный метод для задания 5. Он генерирует и выводит в консоль полученный массив
-    private static void printarraylen() {
+    private static void printArraylen() {
         System.out.println("Задание 5.");
         int[][] printarraylen = arrayLen(random.nextInt(5) + 3, random.nextInt(100));
         for (int[] ints : printarraylen) { //мне такой вид цикла еще не знаком. intelliJ мне сама его пихает всегда,
