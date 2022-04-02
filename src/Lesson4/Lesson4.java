@@ -17,7 +17,7 @@ public class Lesson4 {
     static Random random = new Random();
 
     public static void main(String[] args) {
-        System.out.println("СЫГРАЕМ В КРЕСТИКИ-НОЛИКИ?\n        Твой ход!\n");
+        System.out.println("СЫГРАЕМ В КРЕСТИКИ-НОЛИКИ? \n        Твой ход!\n");
         initMap();
         map();
         start();
