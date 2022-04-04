@@ -94,7 +94,7 @@ public class Lesson3 {
                     stop();
                     break;
                 case '7':
-                    printArraySumm();
+                    printArraySum();
                     System.out.println("** Написать метод, в который передается " +
                             "не пустой одномерный целочисленный массив,\n" +
                             "метод должен вернуть true, если в массиве есть место, " +
@@ -145,14 +145,12 @@ public class Lesson3 {
         System.out.println("Задание 2.");
         int[][] array100 = new int[3][100];
         for(int i = 0; i < array100.length; i++) {
-            int a = 0;
             for (int j = 0; j < array100[i].length; j++){
                 if (j == 51){ // здесь сделал перенос строки, а то не помещается на экран
                     System.out.println();
                 }
-                array100[i][j] = a + 1;
+                array100[i][j] = j + 1;
                 System.out.print(array100[i][j] + " ");
-                a += 1;
             }
             System.out.println("\n");
         }
@@ -293,7 +291,7 @@ public class Lesson3 {
     Смысл решения все равно останется такой же.
     Для тренировки использую двумерный массив. Сначала создам сам метод для решения, а потом сгенерирую
     массив, которым и проверю метод*/
-    private static boolean arraySumm(int[] array){
+    private static boolean arraySum(int[] array){
         boolean c = false;
         int a = 0;
         for (int j = 0; j < array.length; j++) {
@@ -302,7 +300,7 @@ public class Lesson3 {
             for(int k = array.length - 1; k > j; k--){
                 b += array[k];
             }
-            if (a - b == 0  ) {
+            if (a - b == 0) {
                 System.out.println("\nСумма равна " + a +"\nГраница - " + (j + 1) + "-й элемент");
                 c = true;
                 System.out.println(Arrays.toString(array));
@@ -310,23 +308,23 @@ public class Lesson3 {
         }
         return c;
     }
-    /*В методе printArraySumm() генерирую массив и в нем же запускаю метод arraySumm() для проверки,
+    /*В методе printArraySum() генерирую массив и в нем же запускаю метод arraySumm() для проверки,
     выводя все это дело в консоль*/
-    private static void printArraySumm() {
+    private static void printArraySum() {
         System.out.println("Задание 7.\nЭтот массив мы запускаем на проверку");
         int leng = random.nextInt(5) + 8;
-        int[][] printarraySumm = new int[100][leng];
-        for(int i = 0; i < printarraySumm.length; i++){
+        int[][] printArraySum = new int[100][leng];
+        for(int i = 0; i < printArraySum.length; i++){
             System.out.print("Массив № " + (i + 1) + ": ");
-            for( int j = 0; j < printarraySumm[i].length; j++){
-                printarraySumm[i][j] = random.nextInt(20);
-                System.out.print(printarraySumm[i][j] + " ");
+            for( int j = 0; j < printArraySum[i].length; j++){
+                printArraySum[i][j] = random.nextInt(20);
+                System.out.print(printArraySum[i][j] + " ");
             }
             System.out.println();
         }
         int count = 0;
-        for (int i = 0; i < printarraySumm.length; i++) {
-            if(arraySumm(printarraySumm[i])){
+        for (int i = 0; i < printArraySum.length; i++) {
+            if(arraySum(printArraySum[i])){
                 count++;
                 System.out.println("Массив № " + (i + 1) + " прошел тест успешно!");
             }
@@ -389,4 +387,7 @@ public class Lesson3 {
             break;
         }
     }
+
+
+
 }

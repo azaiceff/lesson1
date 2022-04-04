@@ -211,10 +211,11 @@ public class Lesson4 {
 
     private static boolean checkWin(char symb, int line){
 /*В итоге вышел такой простой метод, резюмирующий все выше изложенные методы.
-Чувствую, что здесь как-то по оптимизированией можно написать, но интеладжи на меня ругаться начала,
+Чувствую, что здесь как-то более красиво можно написать, но IntelliJ на меня ругаться начала,
 поэтому оставил пока так*/
         return horizontalLine(symb) >= line || verticalLine(symb) >= line
                || diagonalLineA(symb) >= line || diagonalLineB(symb) >= line;
+
 
     }
 }
