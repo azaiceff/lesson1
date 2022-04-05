@@ -102,7 +102,7 @@ public class Lesson4 {
          что я вынес проверки длинны линий в отдельные методы, можно попробовать их так же использовать для определения
          положения формирующийся линии и на основании этого выбрать координаты ответного хода ИИ*/
         int x,y;
-        if (checkWin(dot_x, line - 2) /*&& size > 4*/){//можно отключить этот режим на маленьком поле
+        if (checkWin(dot_x, line - 2) && size > 4){//можно отключить этот режим на маленьком поле
             do {
                 x = random.nextInt(map.length);
                 y = random.nextInt(map[x].length);
@@ -140,14 +140,13 @@ public class Lesson4 {
                     str++;
                     if (maxStr < str) {
                         maxStr = str;
-                    } else if (j < chars.length - 1 && chars[j + 1] != symb) {
-                        str = 1;
                     }
                 }
             }
         }
         return maxStr;
     }
+
 
     private static int verticalLine (char symb){
         int maxStr = 0;
@@ -159,8 +158,6 @@ public class Lesson4 {
                     str++;
                     if (maxStr < str) {
                         maxStr = str;
-                    } else if (i < map.length - 1 && map[i + 1][j] != symb) {
-                        str = 1;
                     }
                 }
             }
@@ -179,8 +176,6 @@ public class Lesson4 {
                     str++;
                     if (maxStr < str) {
                         maxStr = str;
-                    } else if (j < map[i].length - 1 && i < map.length - 1 && map[i + 1][j + 1] != symb) {
-                        str = 1;
                     }
                 }
             }
@@ -199,9 +194,6 @@ public class Lesson4 {
                     str++;
                     if (maxStr < str) {
                         maxStr = str;
-                    }
-                    if (j != 0 && i < map.length - 1 && map[i + 1][j - 1] != symb) {
-                        str = 1;
                     }
                 }
             }
