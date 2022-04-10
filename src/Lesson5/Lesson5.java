@@ -11,7 +11,7 @@ public class Lesson5 {
                 new Employee("Putin Vladimir", "President", "http://www.letters.kremlin.ru/letters/send", "8 495 606 36 02", 0, 69)
         };
 
-        for(Employee ages : employee){
+        for(Employee ages : employee) {
             if (ages.age > 40){
                 if (ages.getFullName().equals("Putin Vladimir")){
                     System.out.println("Президента не трогаем!!!"
