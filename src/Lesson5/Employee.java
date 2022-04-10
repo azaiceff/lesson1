@@ -6,7 +6,7 @@ class Employee {
     String email;
     String tel;
     int salary;
-    public int age;
+    int age;
 
     Employee(String fullName, String post, String email, String tel, int salary, int age){
         this.fullName = fullName;
