@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class Plate {
 
-
     private int food;
 
     public Plate (int food){
@@ -35,15 +34,9 @@ public class Plate {
         int newFood = random.nextInt(20) + 20;
         System.out.println(newFood + "кг вискоса");
         food += newFood;
-
     }
 
     public void info() {
         System.out.println("В тарелке " + food + "кг вискоса");
-
-
-
-
     }
-
 }

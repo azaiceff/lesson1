@@ -23,12 +23,5 @@ public class Cat {
         }
             appetite = 0;
             System.out.println("Кот наелся!\n" + "В тарелке осталось " + p.getFood() + "кг вискоса");
-
-
-
-
     }
-
-
-
 }
