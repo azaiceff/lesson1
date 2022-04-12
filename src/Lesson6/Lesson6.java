@@ -6,6 +6,8 @@ import Lesson6.Animals.Dogs;
 
 import java.util.Random;
 
+import static Lesson6.Animals.Animals.count;
+
 public class Lesson6 {
     public static void main(String[] args) {
         Random random = new Random();
@@ -20,8 +22,6 @@ public class Lesson6 {
                 new Dogs("Мухтар", "Черно-белый")
         };
 
-        int dogs = 0;
-        int cats = 0;
         for (Animals runs : catsAndDogs){
             int run = random.nextInt(600) + 10;
             if (runs.run(run)){
@@ -31,14 +31,8 @@ public class Lesson6 {
                 System.out.println(runs.getName() + " не добежал до воды");
                 System.out.println();
             }
-            if (runs instanceof Dogs) {
-                dogs++;
-            }
-            if (runs instanceof Cats){
-                cats++;
-            }
         }
-        System.out.println("\nВсего собак " + dogs + "\nИз них утонуло " + Dogs.getDrownedDogs()
-                + "\nВсего котов " + cats + "\nВсего животных " + (dogs + cats));
+        System.out.println("\nВсего собак " + Dogs.count + "\nИз них утонуло " + Dogs.getDrownedDogs()
+                + "\nВсего котов " + Cats.count + "\nВсего животных " + count);
     }
 }

@@ -5,10 +5,11 @@ import java.util.Random;
 public class Dogs extends Animals{
     Random random = new Random();
     private static int drownedDogs = 0;
+    public static int count;
 
     public Dogs(String name, String color) {
-        super(name, color);
-        this.type = "Dog";
+        super(name, color, "Дог");
+        count++;
     }
 
     public static int getDrownedDogs() {return drownedDogs;}
