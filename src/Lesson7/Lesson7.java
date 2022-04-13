@@ -12,8 +12,8 @@ public class Lesson7 {
             cat[i] = new Cat(i + 1, random.nextInt(50) + 1);
         }
 
-        System.out.println("Мы захотели накормить бездомных котов.\n" +
-                "На улице мы смогли поймать " +cat.length  + " котов\n");
+        System.out.println(("Мы захотели накормить бездомных котов.\n" +
+                "На улице мы смогли поймать " +cat.length  + " котов\n").toUpperCase());
 
         Plate plate = new Plate(random.nextInt(100));
 
@@ -26,6 +26,6 @@ public class Lesson7 {
             System.out.println();
         }
 
-        System.out.println("Все коты накормлены, довольны и снова отпущены на волю))");
+        System.out.println("Все коты накормлены, довольны и снова отпущены на волю))".toUpperCase());
     }
 }
