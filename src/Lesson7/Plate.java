@@ -21,7 +21,7 @@ class Plate {
             System.out.print("Еда в тарелке закончилась, добавим в нее еще ");
             newFood();
         }
-        if(food - appetite > 0) {
+        if(food - appetite > 0){
             food -= appetite;
             return food; //здесь не имеет значение что возвращать, главное что бы число было не отрицательно
         }else{

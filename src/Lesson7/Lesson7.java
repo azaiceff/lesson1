@@ -19,7 +19,7 @@ public class Lesson7 {
 
         System.out.println("Подготовили тарелку с едой");
 
-        for (Cat a : cat) {
+        for (Cat a : cat){
             plate.info();
             a.info();
             a.eat(plate);

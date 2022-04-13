@@ -4,7 +4,7 @@ public class Cat {
 
     private final int name;
     private int appetite;
-    Cat(int name, int appetite) {
+    Cat(int name, int appetite){
         this.name = name;
         this.appetite = appetite;
     }
