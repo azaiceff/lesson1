@@ -13,8 +13,6 @@ public class Cats extends Animals{
         count++;
     }
 
-    public int getMaxRun() {return maxRun;}
-
     @Override
     public void swim(int meter) {
         System.out.println(getType() + " " + getName() + " не любит мочиться, просто попил водички, но не поплыл");
