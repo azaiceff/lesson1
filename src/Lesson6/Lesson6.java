@@ -24,8 +24,9 @@ public class Lesson6 {
 
         for (Animals runs : catsAndDogs){
             int run = random.nextInt(600) + 10;
-            if (runs.run(run)){
-                runs.swim(random.nextInt(15) + 5);
+            int meter = random.nextInt(18) + 5;
+            if (runs.run(run, runs.maxRun)){
+                runs.swim(meter);
                 System.out.println();
             }else {
                 System.out.println(runs.getName() + " не добежал до воды");
