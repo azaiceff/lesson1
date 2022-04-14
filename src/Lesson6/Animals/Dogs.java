@@ -16,8 +16,6 @@ public class Dogs extends Animals{
 
     public static int getDrownedDogs() {return drownedDogs;}
 
-
-
     @Override
     public void swim(int meter) {
         super.swim(meter);

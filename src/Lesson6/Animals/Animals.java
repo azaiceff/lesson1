@@ -1,6 +1,9 @@
 package Lesson6.Animals;
 
+import java.util.Random;
+
 public abstract class Animals {
+    Random random = new Random();
 
     private final String name;
     private final String color;
@@ -27,6 +30,12 @@ public abstract class Animals {
             System.out.println("И успешно добежал до воды!!!");
         }
         return true;
+    }
+
+    public int getMaxDistance(String action){
+        if(action.equals("run")){
+            return random.nextInt(600) + 10;
+        }else return random.nextInt(18) + 5;
     }
 
     public void swim(int meter){

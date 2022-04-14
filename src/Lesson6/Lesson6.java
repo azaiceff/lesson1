@@ -4,13 +4,10 @@ import Lesson6.Animals.Animals;
 import Lesson6.Animals.Cats;
 import Lesson6.Animals.Dogs;
 
-import java.util.Random;
-
 import static Lesson6.Animals.Animals.count;
 
 public class Lesson6 {
     public static void main(String[] args) {
-        Random random = new Random();
 
         Animals[] catsAndDogs = {
                 new Cats("Мурзик", "Белый"),
@@ -23,10 +20,8 @@ public class Lesson6 {
         };
 
         for (Animals runs : catsAndDogs){
-            int run = random.nextInt(600) + 10;
-            int meter = random.nextInt(18) + 5;
-            if (runs.run(run, runs.maxRun)){
-                runs.swim(meter);
+            if (runs.run(runs.getMaxDistance("run"), runs.maxRun)){
+                runs.swim(runs.getMaxDistance("swim"));
                 System.out.println();
             }else {
                 System.out.println(runs.getName() + " не добежал до воды");
