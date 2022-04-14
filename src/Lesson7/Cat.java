@@ -14,18 +14,19 @@ public class Cat {
     }
 
     void eat(Plate p) {
-        int app = appetite;
-        appetite -= p.getFood();
-        p.decreaseFood(app);
+        eats(p);
         while(appetite > 0) {
             System.out.println("Кот не наелся, ему еще нужно съесть " + appetite + "кг вискоса");
             p.newFood();
-            app = appetite;
-            appetite -= p.getFood();
-            p.decreaseFood(app);
+            eats(p);
         }
         appetite = 0;
         System.out.println("Кот наелся!\n" + "В тарелке осталось " + p.getFood() + "кг вискоса");
+    }
+    private void eats(Plate p){
+        int app = appetite;
+        appetite -= p.getFood();
+        p.decreaseFood(app);
     }
 }
 /*Так ООпешней получается? Логика теперь такая получается)) Заходит голодный кошак и видит тарелку с едой.
