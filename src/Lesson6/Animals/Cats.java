@@ -7,7 +7,7 @@ public class Cats extends Animals{
     public static int count;
 
 
-    public Cats(String name, String color) {
+    public Cats(String name, String color){
         super(name, color, "Кот");
         count++;
     }

@@ -9,7 +9,7 @@ import java.util.Random;
 import static Lesson6.Animals.Animals.count;
 
 public class Lesson6 {
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         Animals[] catsAndDogs = {
                 new Cats("Мурзик", "Белый"),

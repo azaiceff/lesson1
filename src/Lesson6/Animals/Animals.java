@@ -1,9 +1,6 @@
 package Lesson6.Animals;
 
-import java.util.Random;
-
 public abstract class Animals {
-    Random random = new Random();
 
     private final String name;
     private final String color;
