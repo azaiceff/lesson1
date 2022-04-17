@@ -7,9 +7,8 @@ public class Human {
     private static final int limitPlate = random.nextInt(5) +1;
     static final Plate[] plate = new Plate[limitPlate];
 
-    static int numberPlate = 0;
     static int getPlate() {
-        numberPlate = random.nextInt(plate.length);
+        int numberPlate = random.nextInt(plate.length);
         while(plate[numberPlate] == null){
             numberPlate = random.nextInt(plate.length);
         }
