@@ -1,5 +1,7 @@
 package Lesson7;
 
+import static Lesson7.Human.plate;
+
 public class Cat {
 
     private final int name;
@@ -13,23 +15,19 @@ public class Cat {
         System.out.println("Кот № " + name + " хочет съесть " + appetite + "кг вискоса");
     }
 
-    void eat(Plate p) {
-        eats(p);
+    void eat(int numberPlate) {
+        eats(numberPlate);
         while(appetite > 0) {
             System.out.println("Кот не наелся, ему еще нужно съесть " + appetite + "кг вискоса");
-            p.newFood();
-            eats(p);
+            Human.getAmountOfFood(plate[numberPlate]);
+            eats(numberPlate);
         }
         appetite = 0;
-        System.out.println("Кот наелся!\n" + "В тарелке осталось " + p.getFood() + "кг вискоса");
+        Human.overEating(numberPlate);
     }
-    private void eats(Plate p){
+    private void eats(int numberPlate){
         int app = appetite;
-        appetite -= p.getFood();
-        p.decreaseFood(app);
+        appetite -= plate[numberPlate].getFood();
+        plate[numberPlate].decreaseFood(app);
     }
 }
-/*Так ООпешней получается? Логика теперь такая получается)) Заходит голодный кошак и видит тарелку с едой.
-Начинает есть и убавляет количество еды в тарелке. Если еда в тарелке закончилась, он просит добавки.
-Добавка появляется, он снова начинает есть и так до тех пор, пока не утолит свой аппетит.))
-*/

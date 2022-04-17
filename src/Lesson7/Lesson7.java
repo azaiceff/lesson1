@@ -2,6 +2,9 @@ package Lesson7;
 
 import java.util.Random;
 
+import static Lesson7.Human.plate;
+
+
 public class Lesson7 {
 
     public static void main(String[] args) {
@@ -15,17 +18,22 @@ public class Lesson7 {
         System.out.println(("Мы захотели накормить бездомных котов.\n" +
                 "На улице мы смогли поймать " +cat.length  + " котов\n").toUpperCase());
 
-        Plate plate = new Plate(random.nextInt(100));
+        System.out.println("У нас есть " + plate.length + " тарелок");
 
-        System.out.println("Подготовили тарелку с едой");
-
-        for (Cat a : cat){
-            plate.info();
-            a.info();
-            a.eat(plate);
-            System.out.println();
+        int numberOfNewPlates = random.nextInt(30) + 1;
+        System.out.println("Подготовим " + numberOfNewPlates + " тарелок с едой");
+        for (int i = 0; i < numberOfNewPlates; i++) {
+            Human.newPlate();
         }
 
-        System.out.println("Все коты накормлены, довольны и снова отпущены на волю))".toUpperCase());
+        for (Cat a : cat){
+            System.out.println();
+            int numPlate = Human.getPlate();
+            Plate.info(numPlate);
+            a.info();
+            a.eat(numPlate);
+        }
+
+        System.out.println("\nВсе коты накормлены, довольны и снова отпущены на волю))".toUpperCase());
     }
 }
