@@ -2,7 +2,7 @@ package Lesson7;
 
 import java.util.Random;
 
-public class Human {
+class Human {
     static Random random = new Random();
     private static final int limitPlate = random.nextInt(5) +1;
     static final Plate[] plate = new Plate[limitPlate];
