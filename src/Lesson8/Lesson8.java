@@ -12,7 +12,7 @@ public class Lesson8 {
             "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut",
             "olive", "pea", "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"
     };
-    private static final int maxTrail = 5;
+
     public static void main(String[] args) {
         //new MyWindow(0);
 
@@ -22,9 +22,9 @@ public class Lesson8 {
 
         StringBuilder word;
         String wordSC;
-        int trail = maxTrail;
+        int maxTrail = 5;
         do {
-            System.out.println("У Вас осталось " + trail + " попыток!");
+            System.out.println("У Вас осталось " + maxTrail + " попыток!");
             System.out.println("Введите загаданное слово");
             wordSC = console.nextLine().toLowerCase();
             if (!hiddenWord.equals(wordSC)) {
@@ -43,10 +43,10 @@ public class Lesson8 {
                 word.append(getRandomNumberOfChars());
                 System.out.println(word);
             }
-            trail--;
-        } while (!hiddenWord.equals(wordSC) && trail > 0);
+            maxTrail--;
+        } while (!hiddenWord.equals(wordSC) && maxTrail > 0);
 
-        if(trail == 0 && !hiddenWord.equals(wordSC)){
+        if(maxTrail == 0 && !hiddenWord.equals(wordSC)){
             System.out.println("Вы проиграли! Загаданное слово " + hiddenWord);
         }else {
             System.out.println("Поздравляю! Вы угадали слово!");
