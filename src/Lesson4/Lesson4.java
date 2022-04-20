@@ -60,16 +60,14 @@ public class Lesson4 {
         for (int i = 0; i < size; i++){
             if (i > sizeX){
                 System.out.print((i + 1) + " ");
-            }else
-            System.out.print(" " + (i + 1) + " ");
+            }else System.out.print(" " + (i + 1) + " ");
         }
         System.out.println();
         int sizeY = 8;
         for (int i = 0; i < size; i++){
             if (i > sizeY) {
                 System.out.print(i + 1);
-            }else
-            System.out.print(i + 1 + " ");
+            }else System.out.print(i + 1 + " ");
             System.out.println(Arrays.toString(map[i]));
         }
     }

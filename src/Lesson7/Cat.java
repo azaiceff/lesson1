@@ -2,7 +2,7 @@ package Lesson7;
 
 import static Lesson7.Human.plate;
 
-public class Cat {
+class Cat {
 
     private final int name;
     private int appetite;
