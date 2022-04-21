@@ -59,7 +59,7 @@ public class Lesson8 {
         } while (choice != 'y' && choice != 'n');
         switch (choice) {
             case 'y': main(null);
-            case 'n':
+            case 'n': break;
         }
         System.out.println("Спасибо за игру!");
     }
